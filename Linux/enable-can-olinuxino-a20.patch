@@ -1,0 +1,46 @@
+diff --git a/arch/arm/boot/dts/sun7i-a20-olinuxino-micro.dts b/arch/arm/boot/dts/sun7i-a20-olinuxino-micro.dts
+index 7e3006f..8b0f241 100644
+--- a/arch/arm/boot/dts/sun7i-a20-olinuxino-micro.dts
++++ b/arch/arm/boot/dts/sun7i-a20-olinuxino-micro.dts
+@@ -318,3 +318,8 @@
+ 	usb2_vbus-supply = <&reg_usb2_vbus>;
+ 	status = "okay";
+ };
++&can0 {
++       pinctrl-names = "default";
++       pinctrl-0 = <&can0_pins_a>;
++       status = "okay";
++};
+diff --git a/arch/arm/boot/dts/sun7i-a20.dtsi b/arch/arm/boot/dts/sun7i-a20.dtsi
+index f7db067..7a47e0b 100644
+--- a/arch/arm/boot/dts/sun7i-a20.dtsi
++++ b/arch/arm/boot/dts/sun7i-a20.dtsi
+@@ -1213,6 +1213,13 @@
+ 				allwinner,drive = <SUN4I_PINCTRL_10_MA>;
+ 				allwinner,pull = <SUN4I_PINCTRL_PULL_UP>;
+ 			};
++			
++			can0_pins_a: can0@0 {
++			       allwinner,pins = "PH20","PH21";
++			       allwinner,function = "can";
++			       allwinner,drive = <0>;
++			       allwinner,pull = <0>;
++			};
+ 
+ 			mmc2_pins_a: mmc2@0 {
+ 				allwinner,pins = "PC6", "PC7", "PC8",
+@@ -1436,6 +1443,14 @@
+ 			status = "disabled";
+ 		};
+ 
++		can0: can@01c2bc00 {
++		       compatible = "allwinner,sun4i-a10-can";
++		       reg = <0x01c2bc00 0x400>;
++		       interrupts = <0 26 4>;
++		       clocks = <&apb1_gates 4>;
++		       status = "disabled";
++		};
++
+ 		ir0: ir@01c21800 {
+ 			compatible = "allwinner,sun4i-a10-ir";
+ 			clocks = <&apb0_gates 6>, <&ir0_clk>;
