@@ -1,0 +1,3 @@
+[submodule "CAN_Test"]
+	path = CAN_Test
+	url = file:///home/sgidel/Projects/Eclipse/Workspace/CAN_Test/
