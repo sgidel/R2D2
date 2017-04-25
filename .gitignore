@@ -1,7 +1,8 @@
-!*.a
-!*.o
-!*.elf
-!*.dtb
-!*.hex
-!*.so
-!*.map
+*.a
+*.o
+*.d
+*.elf
+*.dtb
+*.hex
+*.so
+*.map
