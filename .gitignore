@@ -3,3 +3,5 @@
 !*.elf
 !*.dtb
 !*.hex
+!*.so
+!*.map
