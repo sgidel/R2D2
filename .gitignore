@@ -6,3 +6,5 @@
 *.hex
 *.so
 *.map
+*/Release/
+*/Debug/
