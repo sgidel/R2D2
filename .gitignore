@@ -8,3 +8,14 @@
 *.map
 */Release/
 */Debug/
+
+# temp files
+*.bak
+*.bck
+*.kicad_pcb-bak
+*-cache.lib
+# *-rescue.lib
+ftp-lib-table
+fp-lib-table
+# for external tools
+*.dsn
